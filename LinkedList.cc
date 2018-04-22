@@ -13,13 +13,6 @@ private:
 		head = NULL;
 		length = 0;
 	}
-//looser
-	void insertAtHead(int value) {
-		chunk *body = new chunk;
-		body->value = value;
-		body->next = head;
-		head = body;
-	}
 
 	void enqueue(int x) {
 		chunk *temp = new chunk;
