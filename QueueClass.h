@@ -4,7 +4,12 @@ using namespace std;
 
 class Queue {
 public:
-
+	Queue() {
+		head = NULL;
+	}
+	~Queue() {
+		delete();
+	}
 void waitTime(){}
 void serviceTime(){}
 void queueLength(){
@@ -15,6 +20,8 @@ void queueWorst(){}
 void queueTime(){ 
 	// wait time + service time 
 	}
+	
+	
 private:
 
 
