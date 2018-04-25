@@ -1,0 +1,16 @@
+#pragma once
+#include <iostream>
+using namespace std;
+
+int main()
+{
+//simulate starting at 8am to 1am
+int time = 0;
+while (time <1020){
+//someone walks in 
+
+//someone is done, and will walk out with their food
+}
+
+
+}
