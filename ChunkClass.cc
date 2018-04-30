@@ -2,12 +2,18 @@
 #include <iostream>
 using namespace std;
 
-class chunk{
+class person{
 public:
-	int value;
+	int inTime;
+	int timeInLine;
+	int orderTime;
+	int processTime;
+	int outTime;
 	chunk *next;
-	chunk() {
+	
+	person() {
 		value = 0;
+		order = 0;
 		next = NULL;
 	}
 };

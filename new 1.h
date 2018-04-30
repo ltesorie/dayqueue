@@ -15,6 +15,21 @@ class customer{
 	}
 };
 
+class person{
+public:
+	int inTime;
+	int timeInLine;
+	int orderTime;
+	int processTime;
+	int outTime;
+	chunk *next;
+	
+	person() {
+		value = 0;
+		order = 0;
+		next = NULL;
+	}
+};
 
 class Queue{
  customer *head
@@ -34,7 +49,6 @@ class Queue{
 			temp->next = head;
 			head = temp;
 		}
-		
 		
 	}
 	
