@@ -54,8 +54,19 @@ public:
 			cout << "No one in line" << endl;
 		}
 		else if (head->next == NULL) {
+			//store their info..
 			delete head;
-			cout << "Nothing left in the queue" << endl;
+			cout << "No one left in line" << endl;
+		}
+		else {
+			target = head;
+			while (target->next != NULL) {
+				temp = target;
+				target = target->next;
+			}
+			temp->next = NULL;
+			delete target;
+			cout << "Next Customer!" << endl;
 		}
 	}
  
