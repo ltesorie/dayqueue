@@ -11,27 +11,29 @@ private:
 	int orderTime;
 	int processTime;
 	int outTime;
-	chunk *next;
+
 	
 public:
 	Customer(){
 		temp = 0;
 		orderTime = 0;
+		inTime = 0;
 		next = NULL;
 		nextCustomer = -1;
+		chunk *next;
 	}
 };
 
 class Queue{
 private:
 		int rank = 0; 
-		customer *head;
+		Customer *head;
 		
 public:
 	
 	void enqueue(int time) {
 		Customer *temp = new Customer;
-		temp->time = time;
+		temp->inTime = time;
 		temp->next = NULL;
 		temp->orderTime = rand()%6 + 1;
 
@@ -85,9 +87,9 @@ int main()
 {
 //simulate starting at 8am to 1am
 
-int time = 0;
+	int time = 0;
 	int guess; // for the time 
-
+	Queue person;
 
 	if (int i = time ; i <= 1020 ; i++) {
 		guess = rand()%145 +1;
@@ -97,35 +99,35 @@ int time = 0;
 		if(time >= 0 && time <= 120){
 			//breakfast zone,  p_a(t)=0.3
 			if (guess <= 30){
-				enqueue(time, order);
+				person.enqueue(time);
 			}
 		}
 		else if(time >120 && time <= 210){
 			if (guess <= 10){
-				enqueue(time, order);
+				person.enqueue(time);
 			}
 		}
 		else if(time >210 && time <= 330){
 			if (guess <= 40){
-				enqueue(time, order);
+				person.enqueue(time);
 			}
 		}
 		else if(time >330 && time <= 570){
 			if (guess <= 10){
-				enqueue(time, order);
+				person.enqueue(time);
 			}
 		}
 		else if(time >570 && time <= 720){
 			if (guess <= 25){
-				enqueue(time, order);
+				person.enqueue(time);
 			}
 		}else if(time >720 && time <= 900){
 			if (guess <= 20){
-				enqueue(time, order);
+				person.enqueue(time);
 			}
 		}else if(time >900 && time <= 1020){
 			if (guess <= 10){
-				enqueue(time, order);
+				person.enqueue(time);
 			}
 		}
 		
