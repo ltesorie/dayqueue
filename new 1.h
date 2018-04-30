@@ -101,55 +101,33 @@ int time = 0;
 			if (guess <= 30){
 				enqueue(time, order);
 			}
-			else{
-				//do nothing
-			}
-					
 		}
 		else if(time >120 && time <= 210){
 			if (guess <= 10){
 				enqueue(time, order);
-			}
-			else{
-				//do nothing 
 			}
 		}
 		else if(time >210 && time <= 330){
 			if (guess <= 40){
 				enqueue(time, order);
 			}
-			else{
-				//do nothing 
-			}
 		}
 		else if(time >330 && time <= 570){
 			if (guess <= 10){
 				enqueue(time, order);
-			}
-			else{
-				//do nothing 
 			}
 		}
 		else if(time >570 && time <= 720){
 			if (guess <= 25){
 				enqueue(time, order);
 			}
-			else{
-				//do nothing 
-			}
 		}else if(time >720 && time <= 900){
 			if (guess <= 20){
 				enqueue(time, order);
 			}
-			else{
-				//do nothing 
-			}
 		}else if(time >900 && time <= 1020){
 			if (guess <= 10){
 				enqueue(time, order);
-			}
-			else{
-				//do nothing 
 			}
 		}
 		
