@@ -65,7 +65,13 @@ int main()
 	int guess; // for the time 
 	guess = rand()%145 +1;
 
-	while (time < 1020){
+	
+	while (time > 1020) {
+	
+			cout << "Sorry we are closed and will open at 8 a.m. " << '\n';
+	
+	}
+	while (time <= 1020){
 		if(time >= 0 && time <= 120){
 			//breakfast zone,  p_a(t)=0.3
 			if (guess <= 30){
@@ -114,7 +120,7 @@ int main()
 			else{
 				//do nothing 
 			}
-		}else if(time >900 && time < 1020){
+		}else if(time >900 && time <= 1020){
 			if (guess <= 10){
 				enqueue(time, order);
 			}
