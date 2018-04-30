@@ -2,17 +2,29 @@
 #include <iostream>
 using namespace std;
 
-class customer{
-	public:
-	int inTime; 
-	int outTime;
-	int orderTime;
-	int processTime;
-//wait time is time in line
-//total time is waiting in line plus waiting for food
-	Customer(){
+class Customer{
+private:
+	double probability;
+	int nextCustomer;
+public:
+	Customer(int random, double probability){
+		srand(random);
+		probability = probability;
+		nextCustomer = -1;
+	};
+	bool isArrival(){
+		bool returnVal = false;
+		double event = rand()%100 + 1;
 		
-	}
+		if ( event/ 100 <= probability ) {
+			returnVal = true; 
+			nextCustomer++;
+		}
+		return returnVal;
+	};
+	int getArrival(){
+		return nextCustomer;
+	};
 };
 
 class person{
