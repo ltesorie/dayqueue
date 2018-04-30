@@ -14,13 +14,14 @@ private:
 
 	
 public:
+	Customer* next;
+
 	Customer(){
 		temp = 0;
 		orderTime = 0;
 		inTime = 0;
 		next = NULL;
 		nextCustomer = -1;
-		chunk *next;
 	}
 };
 
