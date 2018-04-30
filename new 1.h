@@ -19,10 +19,13 @@ class customer{
 class Queue{
  customer *head
  
-	void enqueue(int x) {
-		chunk *temp = new chunk;
-		temp->value = x;
+	void enqueue(int time, int order) {
+		person *temp = new person;
+		temp->value = time;
 		temp->next = NULL;
+		
+		temp->order = rand()%6 + 1;
+		temp->order = orderTime; 
 
 		if (head == NULL) {
 			head = temp;
@@ -31,10 +34,12 @@ class Queue{
 			temp->next = head;
 			head = temp;
 		}
+		
+		
 	}
 	
 	void dequeue() {
-		chunk *temp, *target;
+		person *temp, *target;
 
 		if (head == NULL) {
 			cout << "Nothing in queue.. awkward" << endl;
@@ -61,16 +66,14 @@ class Queue{
 int main()
 {
 //simulate starting at 8am to 1am
-	int time = 0;
+
+int time = 0;
 	int guess; // for the time 
 	guess = rand()%145 +1;
 
+
+	if (int i = time ; i <= 1020 ; i++) {
 	
-	while (time > 1020) {
-	
-			cout << "Sorry we are closed and will open at 8 a.m. " << '\n';
-	
-	}
 	while (time <= 1020){
 		if(time >= 0 && time <= 120){
 			//breakfast zone,  p_a(t)=0.3
@@ -131,6 +134,13 @@ int main()
 		
 		
 	time++;
+	
+	} else if (time > 1020) {
+	
+			cout << "Sorry we are closed and will open at 8 a.m. " << '\n';
+			break;
+	}
+	
 	}
 		
 	//someone walks in --what order
