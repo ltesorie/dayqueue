@@ -6,8 +6,18 @@ class Customer{
 private:
 	double probability;
 	int nextCustomer;
+	int inTime;
+	int timeInLine;
+	int orderTime;
+	int processTime;
+	int outTime;
+	chunk *next;
+	
 public:
 	Customer(int random, double probability){
+		value = 0;
+		order = 0;
+		next = NULL;
 		srand(random);
 		probability = probability;
 		nextCustomer = -1;
@@ -27,21 +37,6 @@ public:
 	};
 };
 
-class person{
-public:
-	int inTime;
-	int timeInLine;
-	int orderTime;
-	int processTime;
-	int outTime;
-	chunk *next;
-	
-	person() {
-		value = 0;
-		order = 0;
-		next = NULL;
-	}
-};
 
 class Queue{
  customer *head
