@@ -18,11 +18,41 @@ class customer{
 
 class Queue{
  customer *head
+ 
+	void enqueue(int x) {
+		chunk *temp = new chunk;
+		temp->value = x;
+		temp->next = NULL;
+
+		if (head == NULL) {
+			head = temp;
+		}
+		else {
+			temp->next = head;
+			head = temp;
+		}
+	}
+	
+	void dequeue() {
+		chunk *temp, *target;
+
+		if (head == NULL) {
+			cout << "Nothing in queue.. awkward" << endl;
+		}
+		else if (head->next == NULL) {
+			delete head;
+			cout << "Nothing left in the queue" << endl;
+		}
+	}
+ 
+	int getLength(){
+		
+	}
+ 
+ 
 //void enqueue()  -- add new customer
 //void dequeue() -- customer done, remove from store
 //int getLength()
-
-
  
 };
 
@@ -33,11 +63,11 @@ int main()
 //simulate starting at 8am to 1am
 	int time = 0;
 	int guess; // for the time 
+	guess = rand()%145 +1;
 
 	while (time < 1020){
 		if(time >= 0 && time <= 120){
 			//breakfast zone,  p_a(t)=0.3
-			guess = rand()%100 +1
 			if (guess <= 30){
 				enqueue(time, order);
 			}
@@ -47,7 +77,6 @@ int main()
 					
 		}
 		else if(time >120 && time <= 210){
-			guess = rand()%100 +1
 			if (guess <= 10){
 				enqueue(time, order);
 			}
@@ -56,7 +85,6 @@ int main()
 			}
 		}
 		else if(time >210 && time <= 330){
-			guess = rand()%100 +1
 			if (guess <= 40){
 				enqueue(time, order);
 			}
@@ -65,7 +93,6 @@ int main()
 			}
 		}
 		else if(time >330 && time <= 570){
-			guess = rand()%100 +1
 			if (guess <= 10){
 				enqueue(time, order);
 			}
@@ -74,7 +101,6 @@ int main()
 			}
 		}
 		else if(time >570 && time <= 720){
-			guess = rand()%100 +1
 			if (guess <= 25){
 				enqueue(time, order);
 			}
@@ -82,7 +108,6 @@ int main()
 				//do nothing 
 			}
 		}else if(time >720 && time <= 900){
-			guess = rand()%100 +1
 			if (guess <= 20){
 				enqueue(time, order);
 			}
@@ -90,7 +115,6 @@ int main()
 				//do nothing 
 			}
 		}else if(time >900 && time < 1020){
-			guess = rand()%100 +1
 			if (guess <= 10){
 				enqueue(time, order);
 			}
@@ -101,7 +125,6 @@ int main()
 		
 		
 	time++;
-
 	}
 		
 	//someone walks in --what order
