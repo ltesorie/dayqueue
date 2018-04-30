@@ -2,9 +2,9 @@
 #include <iostream>
 using namespace std;
 
-class Customer{
+
+class Customer: public Queue{
 private:
-	double probability;
 	int nextCustomer;
 	int inTime;
 	int timeInLine;
@@ -14,56 +14,44 @@ private:
 	chunk *next;
 	
 public:
-	Customer(int random, double probability){
-		value = 0;
-		order = 0;
+	Customer(){
+		temp = 0;
+		orderTime = 0;
 		next = NULL;
-		srand(random);
-		probability = probability;
 		nextCustomer = -1;
-	};
-	bool isArrival(){
-		bool returnVal = false;
-		double event = rand()%100 + 1;
-		
-		if ( event/ 100 <= probability ) {
-			returnVal = true; 
-			nextCustomer++;
-		}
-		return returnVal;
-	};
-	int getArrival(){
-		return nextCustomer;
-	};
+	}
 };
 
-
 class Queue{
- customer *head
- 
-	void enqueue(int time, int order) {
-		person *temp = new person;
-		temp->value = time;
-		temp->next = NULL;
+private:
+		int rank = 0; 
+		customer *head;
 		
-		temp->order = rand()%6 + 1;
-		temp->order = orderTime; 
+public:
+	
+	void enqueue(int time) {
+		Customer *temp = new Customer;
+		temp->time = time;
+		temp->next = NULL;
+		temp->orderTime = rand()%6 + 1;
 
 		if (head == NULL) {
 			head = temp;
+			rank = 1;
 		}
 		else {
 			temp->next = head;
 			head = temp;
+			rank = rank + 1; 
 		}
 		
 	}
 	
 	void dequeue() {
-		person *temp, *target;
+		Customer *temp, *target;
 
 		if (head == NULL) {
-			cout << "Nothing in queue.. awkward" << endl;
+			cout << "No one in line" << endl;
 		}
 		else if (head->next == NULL) {
 			delete head;
@@ -74,8 +62,6 @@ class Queue{
 	int getLength(){
 		
 	}
- 
- 
 //void enqueue()  -- add new customer
 //void dequeue() -- customer done, remove from store
 //int getLength()
@@ -90,10 +76,11 @@ int main()
 
 int time = 0;
 	int guess; // for the time 
-	guess = rand()%145 +1;
 
 
 	if (int i = time ; i <= 1020 ; i++) {
+		guess = rand()%145 +1;
+	
 	
 	while (time <= 1020){
 		if(time >= 0 && time <= 120){
@@ -130,7 +117,6 @@ int time = 0;
 				enqueue(time, order);
 			}
 		}
-		
 		
 	time++;
 	
