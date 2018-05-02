@@ -3,7 +3,7 @@
 using namespace std;
 
 
-class Customer: public Queue{
+class Customer{
 private:
 	int nextCustomer;
 	int inTime;
@@ -11,13 +11,11 @@ private:
 	int orderTime;
 	int processTime;
 	int outTime;
-
 	
 public:
 	Customer* next;
 
 	Customer(){
-		temp = 0;
 		orderTime = 0;
 		inTime = 0;
 		next = NULL;
@@ -25,7 +23,7 @@ public:
 	}
 };
 
-class Queue{
+class Queue: public Customer{
 private:
 		int rank = 0; 
 		Customer *head;
@@ -92,57 +90,53 @@ int main()
 	int guess; // for the time 
 	Queue person;
 
-	if (int i = time ; i <= 1020 ; i++) {
+	for (int i = time ; i <= 1020 ; i++) {
 		guess = rand()%145 +1;
-	
-	
-	while (time <= 1020){
-		if(time >= 0 && time <= 120){
-			//breakfast zone,  p_a(t)=0.3
-			if (guess <= 30){
-				person.enqueue(time);
+		while (time <= 1020){
+			if(time >= 0 && time <= 120){
+				//breakfast zone,  p_a(t)=0.3
+				if (guess <= 30){
+					person.enqueue(time);
+				}
 			}
-		}
-		else if(time >120 && time <= 210){
-			if (guess <= 10){
-				person.enqueue(time);
+			else if(time >120 && time <= 210){
+				if (guess <= 10){
+					person.enqueue(time);
+				}
 			}
-		}
-		else if(time >210 && time <= 330){
-			if (guess <= 40){
-				person.enqueue(time);
+			else if(time >210 && time <= 330){
+				if (guess <= 40){
+					person.enqueue(time);
+				}
 			}
-		}
-		else if(time >330 && time <= 570){
-			if (guess <= 10){
-				person.enqueue(time);
+			else if(time >330 && time <= 570){
+				if (guess <= 10){
+					person.enqueue(time);
+				}
 			}
-		}
-		else if(time >570 && time <= 720){
-			if (guess <= 25){
-				person.enqueue(time);
+			else if(time >570 && time <= 720){
+				if (guess <= 25){
+					person.enqueue(time);
+				}
+			}else if(time >720 && time <= 900){
+				if (guess <= 20){
+					person.enqueue(time);
+				}
+			}else if(time >900 && time <= 1020){
+				if (guess <= 10){
+					person.enqueue(time);
+				}
 			}
-		}else if(time >720 && time <= 900){
-			if (guess <= 20){
-				person.enqueue(time);
-			}
-		}else if(time >900 && time <= 1020){
-			if (guess <= 10){
-				person.enqueue(time);
-			}
-		}
-		
-	time++;
-	
-	} else if (time > 1020) {
-	
+			time++;
+	    }
+		if (time > 1020) {
 			cout << "Sorry we are closed and will open at 8 a.m. " << '\n';
 			break;
-	}
-	
-	}
-		
-	//someone walks in --what order
+		}
+	}		
+}
+
+//someone walks in --what order
 	// 433 -- what does that mean.. what zone
 	//8-10am 0-120
 	//10-12  121-210
@@ -152,9 +146,6 @@ int main()
 
 	//someone is done, and will walk out with their food
 	//100% of your data collection happens at dequeue 
-
-}
-
 
 //how long it takes..
 //what happens at tail end of queue
