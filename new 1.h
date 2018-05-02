@@ -6,10 +6,10 @@ class Customer{
 public:	
 	int nextCustomer;
 	int inTime;
-	int timeInLine;
+	int timeInLine; //not established yet
 	int orderTime;
-	int processTime;
-	int outTime;
+	int processTime;  //not established yet
+	int outTime;     //not established yet....should be in dequeue
 	Customer* next;
 
 	Customer(){
@@ -69,8 +69,69 @@ public:
 	}
  
 	int getLength(){
+		int count = 0;
+		if (head == NULL) {
+			cout << "No one in line" << endl;
+		}
+		else if (head->next == NULL) {
+			cout << "One person left line" << endl;
+		}
+		else {
+			target = head;
+			while (target->next != NULL) {
+				temp = target;
+				target = target->next;
+				count ++;
+			}
+			cout << count <<" Customers in line." << endl;
+		}
+	}
+	void waitTime(int inLine){
+		//create second linked list named newll
+		//this class adds LL to head with the value being the wait time
+		//we can getlength...add values and  divide by length...
+		
+		if (head == NULL) {
+			head = newll;
+		}
+		else {
+			newll->next = head;
+			head = newll;
+		}
+		
 		
 	}
+	void serviceTime(){
+		
+	}
+	void queueLength(){
+		if(time >= 0 && time <= 120){
+				//calculate avergae people in line at that time
+			}
+			else if(time >120 && time <= 210){
+				//calculate avergae people in line at that time
+			}
+			else if(time >210 && time <= 330){
+				//calculate avergae people in line at that time
+			}
+			else if(time >330 && time <= 570){
+				//calculate avergae people in line at that time
+			}
+			else if(time >570 && time <= 720){
+				//calculate avergae people in line at that time
+			}else if(time >720 && time <= 900){
+				//calculate avergae people in line at that time
+			}else if(time >900 && time <= 1020){
+				//calculate avergae people in line at that time
+			}
+	//Average queue length. The mean number of people in line at any given time averaged over the entire day.
+	}
+	void queueBest(){}
+	void queueWorst(){}
+	void queueTime(){ 
+	// wait time + service time 
+	}
+		
 //void enqueue()  -- add new customer
 //void dequeue() -- customer done, remove from store
 //int getLength()
