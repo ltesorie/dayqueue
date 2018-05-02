@@ -2,17 +2,14 @@
 #include <iostream>
 using namespace std;
 
-
 class Customer{
-private:
+public:	
 	int nextCustomer;
 	int inTime;
 	int timeInLine;
 	int orderTime;
 	int processTime;
 	int outTime;
-	
-public:
 	Customer* next;
 
 	Customer(){
@@ -29,7 +26,7 @@ private:
 		Customer *head;
 		
 public:
-	
+
 	void enqueue(int time) {
 		Customer *temp = new Customer;
 		temp->inTime = time;
