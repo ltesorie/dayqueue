@@ -52,7 +52,7 @@ public:
 			cout << "No one in line" << endl;
 		}
 		else if (head->next == NULL) {
-			//store their info..
+			//store their info
 			delete head;
 			cout << "No one left in line" << endl;
 		}
@@ -110,14 +110,11 @@ public:
 			}
 			else if(time >120 && time <= 210){
 				//calculate avergae people in line at that time
-			}
-			else if(time >210 && time <= 330){
+			}else if(time >210 && time <= 330){
 				//calculate avergae people in line at that time
-			}
-			else if(time >330 && time <= 570){
+			}else if(time >330 && time <= 570){
 				//calculate avergae people in line at that time
-			}
-			else if(time >570 && time <= 720){
+			}else if(time >570 && time <= 720){
 				//calculate avergae people in line at that time
 			}else if(time >720 && time <= 900){
 				//calculate avergae people in line at that time
