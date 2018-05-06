@@ -1,18 +1,16 @@
 #include <iostream>;
+#include <iostream>;
 #include <stdlib.h>;
+#include<stdio.h>
 #include <time.h>;
 using namespace std;
-//
-//here is a tip
-//don't do it overnight... 
-//start it now-ish!! 
 
-class MartixElement {
+struct MatrixElement {
 public:
 	int row;
 	int col; 
 	int value;
-	MartixElement *next;
+	struct MatrixElement *next;
 
 	MatrixElement() {
 		row = 0;
@@ -20,42 +18,61 @@ public:
 		value = 0;
 		next = NULL;
 	}
-};
-
-class SparseMatrix {
-public:
-	MatrixElement *head;
-
-	SparseMatrix() {
-		head = NULL;
+	
+	void newMatrixElement(struct MatrixElement** begin, int nonZero, int rowLoc, int colLoc){
+		 struct newMatrixElement *temp, *s;
+				temp = *start;
+				if (temp == NULL)
+							{
+       
+					temp = (struct newMatrixElement *) malloc (sizeof(struct newMatrixElement));
+					temp->value = nonZero;
+					temp->row = rowLoc;
+					temp->col = colLoc;
+					temp->next = NULL;
+					*start = temp;
+ 
+					}
+						else
+							{
+							while (temp->next != NULL)
+								temp = temp->next;
+								s = (struct newMatrixElement *) malloc (sizeof(struct newMatrixElement));
+								s->value = nonZero;
+								s->row = rowLoc;
+								s->col = colLoc;
+								s->next = NULL;
+								temp->next = s;
+ 
+							}
 	}
-
-	void addElement(int row, int col, int value) {
-		//adds another element to the end
-		//grab a temp = new matrix element
-		//temp->row temp->value to the right stuff
-		//grab another traverse and go to the end..
-		//knit in the temp to structure :)
-		//dont need delete func
-
-		//
-
-
-	}
-
-	void display() {
-		////////like this but not
-		/*for (int i = 0; i < 10; i++) {
-			for (int j = 0; j < 10; j++) {
-				guess = rand() % 10 + 1;
-				if (guess <= 5)
-					cout << 1 << " ";
-				else
-					cout << 0 << " ";
-			}
-			cout << endl;
-		}*/
-
+	
+	void printMatrix(struct newMatrixElement){
+		struct newMatrixElement *temp, *r, *s;
+		temp = r = s = start;
+	 
+		printf("row_position: ");
+		while(temp != NULL){
+			printf("%d ", temp->row_position);
+			temp = temp->next;
+		}
+		printf("\n");
+	 
+		printf("column_postion: ");
+		while(r != NULL){
+			printf("%d ", r->column_postion);
+			r = r->next;
+		}
+		printf("\n");
+		printf("Value: ");
+		while(s != NULL)
+		{
+			printf("%d ", s->value);
+			s = s->next;
+		}
+		printf("\n");
+	
+	
 	}
 };
 
