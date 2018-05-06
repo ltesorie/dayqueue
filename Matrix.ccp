@@ -82,7 +82,7 @@ int main() {
 	srand(time(NULL));
 	int guess;
 
-	MartixElement *A= NULL; //pointer 
+	MatrixElement *A= NULL; //pointer 
 
 //generate a 10x10 matrix so only 5% elements are non zero
 	for (int i = 0; i < 10; i++) {
@@ -140,6 +140,13 @@ int main() {
 			}
 		}
 	}
+
+
+
+
+
+	system("pause");
+}
 
 
 
