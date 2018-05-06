@@ -18,7 +18,7 @@ public:
 		value = 0;
 		next = NULL;
 	}
-	
+};
 	void newMatrixElement(struct MatrixElement** begin, int nonZero, int rowLoc, int colLoc){
 		 struct newMatrixElement *temp, *s;
 				temp = *start;
@@ -74,7 +74,7 @@ public:
 	
 	
 	}
-};
+
 
 
 
